@@ -87,21 +87,61 @@ class List:
 
     def remove(self, item):
         index = self.find(item)
-        if type(index) == int:
+        if isinstance(index, int):
             self.__delitem__(index)
         else:
             return index
 
     def sort(self, reverse=None, key=None):
+        # TODO: functionality for key arugument in list sort
         for i in range(self.n):
-            print(i)
-            if self.A[i] > self.A[i + 1]:
-                temp1 = self.A[i]
-                self.A[i + 1] = self.A[i]
-                self.A[i] = temp1
+            if not self.__len__() - 1 == i:
+                if reverse:
+                    if self.A[i] < self.A[i + 1]:
+                        self.A[i], self.A[i + 1] = self.A[i + 1], self.A[i]
+                        self.sort(reverse=True)
+                else:
+                    if self.A[i] > self.A[i + 1]:
+                        self.A[i], self.A[i + 1] = self.A[i + 1], self.A[i]
+                        self.sort()
+        return self
 
-                print(self.A[i], "=======")
+    def min(self):
+        # TODO: currently work for list of integers
+        sorted_list = self.sort(reverse=None)
+        return sorted_list[0]
 
+    def max(self):
+        # TODO: currently work for list of integers
+        sorted_list = self.sort(reverse=True)
+        return sorted_list[0]
+
+    def sum(self, start=None):
+        result = 0
+        for i in range(self.n):
+            if isinstance(self.A[i], int):
+                result += self.A[i]
+            else:
+                return "ValueError: all items should be integers"
+        if start and isinstance(start, int):
+            result += start
+        return result
+
+
+L = List()
+L.append(1)
+L.append(3)
+L.append(-1)
+L.append(23)
+print(L)
+
+L.sort(reverse=None)
+print(L)
+
+print(L.min())
+print(L.max())
+print(L.sum())
+print(L.sum(start=20))
 
 # # An object of Class List
 # L = List()
@@ -160,15 +200,5 @@ class List:
 
 # del L[3]
 # print(L)
-
-# # remove the item from the list
-# L.remove(20000)
+# remove the item from the list
 # print(L)
-
-L = List()
-L.append(1)
-L.append(3)
-L.append(2)
-L.append(0)
-L.sort()
-print(L)

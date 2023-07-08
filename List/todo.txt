@@ -12,3 +12,6 @@ Dynamic Array
 10) delete from list
 11) remove from list
 12) sort the lists
+13) min lists
+14) max lists
+15) sum in  lists
