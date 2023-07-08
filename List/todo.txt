@@ -1,0 +1,14 @@
+Dynamic Array
+
+1) Create List 
+2) Length of List
+3) Append in List
+4) Print List
+5) Indexing in List
+6) pop from List
+7) clear the list
+8) insert into list
+9) find in list
+10) delete from list
+11) remove from list
+12) sort the lists
