@@ -45,7 +45,7 @@ class List:
     def append(self, item):
         if self.n == self.size:
             # have to resize the array becuase there is no vacant space in the array\
-            self.__resize(self.size * 2)
+            self.__resize(self.size + 8)
 
         # append if space is available
         self.A[self.n] = item
