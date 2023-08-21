@@ -1,0 +1,8 @@
+Node
+LinkedList
+
+do the following operations:
+1) length of the LinkedList
+2) insert from head of the LinkedList
+3) transverse through the LinkedList / Print
+4) insert from tail of the LinkedList
